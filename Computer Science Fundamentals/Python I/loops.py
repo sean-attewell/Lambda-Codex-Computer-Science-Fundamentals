@@ -1,3 +1,68 @@
+# You can use two types of loops in Python, a for loop and a while loop. A for loop iterates over a given sequence (iterator expression).
+# A while loop repeats as long as a boolean context evaluates to True.
+
+# The break statement terminates the loop containing it. Control of the program flows to the statement immediately after the body of the loop.
+# If the break statement is inside a nested loop (loop inside another loop), the break statement will only terminate the innermost loop.
+
+# You can use the continue statement to skip the rest of the code inside a loop for the current iteration only.
+# The loop does not terminate entirely but continues with the next iteration.
+
+
+# Prints 0, 1, 2, 3, 4
+for x in range(5):
+    print(x)
+
+    # Prints 2, 3, 4, 5, 6
+for x in range(2, 7):
+    print(x)
+
+# Prints 1, 3, 5, 7
+for x in range(1, 8, 2):
+    print(x)
+
+
+# Prints 0, 1, 2, 3, 4
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# Prints 2, 3, 4, 5, 6
+count = 2
+while count < 7:
+    print(count)
+    count += 1
+
+# Prints 1, 3, 5, 7
+count = 1
+while count < 8:
+    print(count)
+    count += 2
+
+
+# You can use a break statement to exit a for loop or a while loop.
+
+# Prints 0, 1, 2, 3, 4
+count = 0
+while True:
+    print(count)
+    count += 1
+    if count >= 5:
+        break
+
+
+# You can also use a continue statement to skip the current block but not exit the loop entirely.
+
+# Prints 1, 3, 5, 7
+for x in range(8):
+    # if x is even, skip this block and do not print
+    if x % 2 == 0:
+        continue
+    print(x)
+
+
+# https://treyhunner.com/2016/04/how-to-loop-with-indexes-in-python/
+
 # If you only need to loop over a single list just use a for-in loop
 # If you need to loop over a list and you need item indexes, use enumerate
 # If you need to loop over multiple lists at the same time, use zip
