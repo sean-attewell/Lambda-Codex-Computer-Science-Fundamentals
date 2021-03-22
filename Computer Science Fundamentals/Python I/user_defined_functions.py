@@ -92,7 +92,9 @@ my_function5(fruits)
 # Recursive functions
 # Python also accepts function recursion, which means a defined function can call itself.
 
-# In this example, tri_recursion() is a function that we have defined to call itself ("recurse"). We use the k variable as the data, which decrements (-1) every time we recurse. The recursion ends when the condition is not greater than 0 (i.e. when it is 0).
+# In this example, tri_recursion() is a function that we have defined to call itself ("recurse").
+# We use the k variable as the data, which decrements (-1) every time we recurse.
+# The recursion ends when the condition is not greater than 0 (i.e. when it is 0).
 
 
 def tri_recursion(k):
@@ -112,9 +114,11 @@ what_is_returned = tri_recursion(6)
 print('what_is_returned: ', what_is_returned)
 
 # This decrements k from 6 to zero
-# then adds 0 and 1 (the k before it was last decremented)
-# then adds 1 and 2 (the k before it was last decremented)
-# then adds 2 and 3 (the k before it was last decremented)
+# then adds 0 returned by whole function and 1 (the k before it was last decremented)
+# then adds 1 returned by whole function and 2 (the k before it was last decremented)
+# then adds 2 returned by whole function and 3 (the k before it was last decremented)
 # ...
-# finally adds 15 to 6 (the initial k before first decremented)
+# finally adds 15 returned by whole function to 6 (the initial k before first decremented)
 # prints and returns the last result
+
+# So it UNWINDS in the reverse direction it wound up.
