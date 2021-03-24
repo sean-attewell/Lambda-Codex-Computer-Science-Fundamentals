@@ -201,7 +201,7 @@ def append_num_to_list(lst, num):
 
 
 append_num_to_list(my_list, 4)
-print(my_list)
+print(my_list)  # [1, 2, 3, 4]
 
 # Notice that when append_num_to_list is called and my_list is passed in as an argument.
 # When my_list is bound to lst in that stack frame, lst points to the original my_list in memory.
