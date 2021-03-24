@@ -1,7 +1,9 @@
+# O(log n)	As the input size increases, the runtime will grow slightly slower. logarithmic growth. The variable that's growing has an output that grows much slower than it (think 'log wants to be the exponent', or counting zeros in base 10 powers of 10 example)
 
 # Logarithm Fundamentals https://www.youtube.com/watch?v=cEvgcoyZvB4
 
 # log base10 (1000) = 3 --> 10 to the power of what is 1000?
+# What the log wants to be, is the exponent!
 
 # When you plug in powers of 10, logarithms are a zero counting function!
 # log(0.1) = -1
@@ -23,10 +25,19 @@
 
 # Relations between three different numbers
 # log base10 (1000) = 3 --> 10 to the power of what is 1000?
+# I want the exponent!
 # 10^3 = 1000 --> What is 10 to the power of 3?
+# I want the answer!
 # 3ROOT1000 = 10 --> What to the power of 3 is 1000?
+# I want the base!
 
 # Confusion comes from having 3 different notations. Either relative position of the number, introducing the radical symbol, or a word with 'log'
+
+# In computer science base 2 is usually assumed.
+# log base2 (64) = 6 --> 2 to the power of what is 64?
+
+
+# To solve these things just plug in numbers.
 
 # log(a.b) = log(a) + log(b)
 # 10^x + 10^y = 10^x+y
@@ -50,7 +61,6 @@
 # On a logarithmic scale, big growth doesn't look that far away on a line of best fit
 # Y axis goes up in where each step is multiplicitive (e.g. each step is 10x the previous level).
 # The Y axis is now plotting not the total number of cases, but the logarithm of the total number of cases.
-# i.e. a slowed growth version of number of cases?
 
 
 # In mathematics, a radical expression is defined as any expression containing a radical (√) symbol.
