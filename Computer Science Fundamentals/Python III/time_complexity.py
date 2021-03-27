@@ -21,9 +21,9 @@
 # We don't care about speed when the input size is small. The differences in speed are likely to be minimal when the input size is small. When the input size gets enormous, we can see the differences in efficiency between algorithms.
 
 # O(1) number of operations is unaffected by input size, it is constant.
-# O(log n)	As the input size increases, the runtime will grow slightly slower. logarithmic growth. The variable that's growing has an output that grows much slower than it (think 'log wants to be the exponent', or counting zeros in base 10 powers of 10 example)
+# O(log n)	As the input size increases, the runtime will grow slightly slower. Increases at first but then it stabilizes and changes less. logarithmic growth. The variable that's growing has an output that grows much slower than it (think 'log wants to be the exponent', or counting zeros in base 10 powers of 10 example)
 # O(n) means the number of operations grows at the same rate as the input size. Linear growth.
-# O(n log n) Quasilinear Time
+# O(n log n) Quasilinear Time (log-linear complexity – also called “linearithmic”)
 # O(n^c)	As the input size increases, the runtime will grow at a faster rate. Polynomial (i.e. the variable that's growing is the number with an exponent rather than the exponent itself)
 # O(c^n) As the input size increases, the runtime will grow at a much faster rate. Expontential. (the variable is the exponent, the exponent is what grows)
 # O(n!) As the input size increases, the runtime will grow astronomically, even with relatively small inputs. Factorial growth.
