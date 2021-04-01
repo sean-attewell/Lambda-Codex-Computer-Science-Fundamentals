@@ -1,9 +1,10 @@
 # "1001" in base ten represents "1 thousand, 0 hundreds, 0 tens, and 1 one."
+# It is base 10.
 # In decimal there can be upto 9 of each.
 
 # Each successive digit in the base 10 number system is a power of ten. The ones place is 10^0 = 1. The tens place is 10^1 = 10. The hundreds place is 10^2 = 100. This pattern continues on and on.
 
-# This pattern holds for other number systems as well. In the binary system, each successive digit represents a different power of 2. The first digit represents 2^0 = 1. The second digit represents 2^1 = 2. The third digit represents 2^2 = 4. Again, this pattern continues on and on.
+# This pattern holds for other number systems as well. In the binary system (base 2), each successive digit represents a different power of 2. The first digit represents 2^0 = 1. The second digit represents 2^1 = 2. The third digit represents 2^2 = 4. Again, this pattern continues on and on.
 
 # In binary there can only be upto one of each.
 
@@ -32,10 +33,10 @@
 # The ".1" means half,
 # So "10.1" in binary is 2.5 in decimal
 
-# As we move further left, every number place
+# As we move further left, every number place gets 2 times bigger.
 # As we move further right, every number place gets 2 times smaller (half as big).
 
-# So to the right of the deciam you're doing 1/2, 1/4, 1/8 etc.
+# So to the right of the decimal you're doing 1/2, 1/4, 1/8 etc.
 
 
 # We now know that things are stored in RAM using binary, and each "box" in RAM holds 1 byte (8 bits). What does that mean for what we can store in RAM? Let's say we have 1 byte of RAM to use. How many different numbers can we represent using only this 1 byte?
@@ -52,7 +53,8 @@
 # This pattern can be generalized as 2^n and 2^8 = 256.
 
 # NOTE Don't get confused between the headings of which number each place represents starts at 2^0 (first place represents 1, next place is 2^1 which represents 2)
-# and the way you calculate how many posibile numbers you can store which starts with 2^1 (two possible numbers with one bit)
+# and the way you calculate how many possible numbers you can store which starts with 2^1 (two possible numbers with one bit)
+# Remember that either way it's base 2 with increasing exponents (not increasing bases squared!). Binary is a base 2 number system.
 
 
 # https://www.technipages.com/32-bit-vs-64-bit-cpus#:~:text=For%20three%20bits%2C%20you%20have,total%20of%2018%2C446%2C744%2C073%2C709%2C551%2C616%20possible%20values.
@@ -60,11 +62,16 @@
 # ^good piece on 32-bit vs 64-bit CPUs
 # A 32bit-CPU is only capable of using 32-bit registers to store data and processing 32-bit values.
 # Tip: A register is a piece of extremely fast memory that stores the data that the CPU is actively working on.
-# The main limitation of a 32-bit CPU is the amount of RAM it can support. A 32-bit CPU can only address up to 4 GiB of RAM, a 32-bit CPU is physically not capable of calling the address of any RAM above this amount. 
+# The main limitation of a 32-bit CPU is the amount of RAM it can support. 
+# A 32-bit CPU can only address up to 4 GiB of RAM, a 32-bit CPU is physically not capable of calling the address of any RAM above this amount. 
+
+# In order of speed it must be:
+# Storage --> Memory (RAM) --> Cache --> Register
+# Each closer to the processor than the last
 
 # Tip: GiB means Gibibytes. Gibi is a prefix designed for binary systems like computers and is designed to allow for the fact that the standard prefix of giga (1,000,000,000) is not a whole number in binary. In this prefix notation, each stage of prefix is 1024 times larger than the previous one, rather than 1000 times. For example, one kilogram is 1000 grams and one kibibyte is 1024 bytes. Four gibibytes is 4 x 1024 x 1024 x 1024 bytes, or 4,294,967,296 bytes.
 
-# At 32-bits (4 bytes), you have 232 possible combinations or 4,294,967,296 possible values. .
+# At 32-bits (4 bytes), you have 232 possible combinations or 4,294,967,296 possible values.
 # With 64 bits 8 (bytes), there are a total of 18,446,744,073,709,551,616 possible values
 
 # https://www.quora.com/Will-there-ever-be-another-128-bit-video-game-console
@@ -159,9 +166,5 @@
 # The character sets used in modern computers, in HTML, and on the Internet, are all based on ASCII.
 
 # ASCII Device Control Characters
-
 # The ASCII control characters (range 00-31, plus 127) were designed to control hardware devices.
-
 # Control characters (except horizontal tab, line feed, and carriage return) have nothing to do inside an HTML document.
-
-

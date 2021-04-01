@@ -10,8 +10,7 @@
 # Things that you put in RAM, we can call variables. 
 
 # Each "box"  in RAM has an address.
-# Each one of the "boxes" RAM holds 8 bits. 
-# Each "box" in RAM can hold 1 byte (8 bits).
+# Each one of the "boxes" RAM holds 8 bits (1 byte)
 
 # Now, a computer has more than just disc storage and RAM inside of it. There is also a processor. And, in between the processor and the RAM is something called a memory controller. The memory controller can access each box in RAM directly. It is as if the memory controller had tubes connected to each box of the set of mailboxes. Through those tubes, the memory controller can send and receive information directly to each box in RAM.
 
@@ -36,12 +35,12 @@
 
 # In today's technology, random-access memory takes the form of integrated circuit (IC) chips with MOS (metal-oxide-semiconductor) memory cells. RAM is normally associated with volatile types of memory (such as dynamic random-access memory (DRAM) modules), where stored information is lost if power is removed, although non-volatile RAM has also been developed.[3] Other types of non-volatile memories exist that allow random access for read operations, but either do not allow write operations or have other kinds of limitations on them. These include most types of ROM and a type of flash memory called NOR-Flash.
 
+
 # https://en.wikipedia.org/wiki/Memory_controller
 
 # The memory controller is a digital circuit that manages the flow of data going to and from the computer's main memory. A memory controller can be a separate chip or integrated into another chip, such as being placed on the same die or as an integral part of a microprocessor; in the latter case, it is usually called an integrated memory controller (IMC). A memory controller is sometimes also called a memory chip controller (MCC)[1] or a memory controller unit (MCU).[2]
 
 # A common form of memory controller is the memory management unit (MMU) which in many operating systems, such as Unix, implements virtual addressing.
-
 
 
 # https://en.wikipedia.org/wiki/CPU_cache
