@@ -168,3 +168,32 @@
 # ASCII Device Control Characters
 # The ASCII control characters (range 00-31, plus 127) were designed to control hardware devices.
 # Control characters (except horizontal tab, line feed, and carriage return) have nothing to do inside an HTML document.
+
+
+# In computing, a nibble (occasionally nybble or nyble to match the spelling of byte) is a four-bit aggregation, or half an octet. It is also known as half-byte or tetrade. In a networking or telecommunication context, the nibble is often called a semi-octet, quadbit, or quartet. 
+
+# A nibble has sixteen possible values (2^4). 
+# A nibble can be represented by a single hexadecimal digit and called a hex digit.
+
+# A full byte (octet) is represented by two hexadecimal digits; therefore, it is common to display a byte of information as two nibbles. Sometimes the set of all 256 byte values is represented as a 16×16 table, which gives easily readable hexadecimal codes for each value.
+
+
+# https://vladris.com/blog/2018/10/13/arithmetic-overflow-and-underflow.html
+
+# In C++
+# x is an unsigned 16 bit integer, which can represent values between 0 and 65535. If x is 65535 and we increment it, the value becomes 65536 but that value cannot be represented by a uint16_t. This is an overflow. In this case, C++ wraps the value around and x becomes 0.
+
+# similarly decrementing 0 is -1, which cannot be represented by an uint16_t and becomes 65535
+
+# Python provides support for arbitrarily large integers: unlike C++, where the bit width (number of bits used to represent a number) is fixed, we can have integers of any size:
+# print(10**100)
+
+# Why don’t all languages provide such support? The answer is performance. The underlying hardware the code runs on uses fixed-width integers, so performing arithmetic on fixed-width integer types becomes a single CPU instruction. 
+
+# On the other hand, supporting arbitrarily large integers usually involves writing code to determine how many bits a given value or the result of an arithmetic operation needs and convert that into an array of fixed-width integers large enough to hold that value. The added overhead of this is non-trivial, so unlike Python, most other mainstream languages offer only fixed-width integers and support arbitrarily large integers only explicitly, via libraries.
+
+# Unsigned integers
+# Unsigned integers are represented as a sequence of N bits, thus being able to represent numbers between 0 and 2^N-1. An unsigned 8-bit integer can store any value between 0 and 255, an unsigned 16-bit integer can store any value between 0 and 65535, an unsigned 32-bit integer between 0 and 4294967295, and an unsigned 64-bit integer between 0 and 18446744073709551615.
+
+# Unsigned integer representation is trivial.
+
