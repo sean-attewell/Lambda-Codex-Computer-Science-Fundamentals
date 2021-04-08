@@ -46,7 +46,7 @@
 # Append
 # Adding an item to a linked list is constant time (O(1)). 
 # We always have a reference point to the tail of the linked list, so we can easily insert an item after the tail.
-# NOTE: Video says it's only quick at the head (prepend), and that the end (append) will be linear time. Maybe this is only for a singly linked list?
+# NOTE: Video says for a SLL it's only quick at the head (prepend), and that the end (append) will be linear time. In DLL you would know the tail.
 # This makes sense based on implementation coded below, where append requires starting at the head and going through.
 
 # Insert
@@ -93,7 +93,7 @@
 # In other words, you can be space-efficient by only setting aside the memory you need at the moment. 
 # But, in doing that, you are setting yourself up for low time efficiency if you run out of room and need to copy all of your elements to a newer, bigger array.
 # (instead of constant time complexity, appending an element to an array becomes linear in this case. 
-# Appending to a linked list however, will always be constant time)
+# Prepending to a SLL linked list, and prepending/appending to a DLL however, will always be constant time)
 #
 # With a linked list, the elements are not stored side-by-side in memory. Each element can be stored anywhere in memory.
 # In addition to storing the data for that element, each element also stores a pointer to the memory location of the next element in the list. 
