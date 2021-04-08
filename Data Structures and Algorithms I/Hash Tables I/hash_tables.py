@@ -212,6 +212,7 @@ class User_3:
         return hash((self.name, self.occupation)) # This is a tuple you're hashing.
         # The implementation of the __hash__() function returns a hash value computed with the hash() function from a tuple of attributes.
         # Makes sense that it contains only name and occupation, since if they match the __eq__ method says they're equal.
+        # So they'll then return the same hash too.
 
     def __str__(self):
         return f'{self.name} {self.occupation}'
@@ -223,7 +224,7 @@ u2 = User_3('John Doe', 'gardener')
 
 users = {u1, u2}
 
-print(len(users)) # 1 because sets don't allow duplicate values (duplicate values will be ignored)
+print(len(users)) # 1 because sets don't allow duplicate values, and they hash to the same value as per the hash method (duplicate values will be ignored)
 
 if (u1 == u2):
     print('same user') # this runs
@@ -313,10 +314,10 @@ class HashTable:
             # x << y
             # Returns x with the bits shifted to the left by y places (and new bits on the right-hand-side are zeros). This is the same as multiplying x by 2**y.
 
-            hash_value &= 0xffffffff  # DJB2 is a 32-bit hash, only keep 32 bits
+            hash_value &= 0xffffffff  # DJB2 is a 32-bit hash, only keep 32 bits (4 bits to store a hex character x 8 hex characters)
 
             # the "binary AND", (akin to intersection) of the binary numbers 1110 and 1011 is 1010
-            # I guess since they're all maxed out at f, it keeps the hash_value as it is, but gives it the desired length.
+            # Since they're all maxed out at f, it keeps the hash_value as it is, but gives it the desired length.
 
         return hash_value
 
