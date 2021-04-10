@@ -43,13 +43,13 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        return len(self.storage)
 
     def get_load_factor(self):
         """
         Return the load factor for this hash table.
         Implement this.
         """
-        return len(self.storage)
 
     def djb2(self, key):
         """
