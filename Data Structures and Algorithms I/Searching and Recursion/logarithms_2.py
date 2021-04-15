@@ -2,7 +2,7 @@
 
 # 2^5
 # What does the mathematical expression above mean? It's an abbreviation for the following expression:
-# 2 * 2 * 2 * 2 * 2
+# 1 * 2 * 2 * 2 * 2 * 2
 
 # What we are looking at above is two different ways to express an object that doubles in size with each iteration.
 # Another way to think about 2^5 = 32 is that 2 is the "growth rate" and 5 is the number of times you went through the growth (doubling). 32 is the final result.
@@ -42,7 +42,7 @@
 # You will see this come up when analyzing the time complexity of specific algorithms. 
 # Any algorithm that doubles or halves a number or collection on each iteration of a loop is likely to have O(log n) time complexity. 
 # You will see this come up specifically when we talk about binary search and its time complexity.
-#  You will also see this come up in specific sorting algorithms (like merge sort). 
+# You will also see this come up in specific sorting algorithms (like merge sort). 
 # In simple terms, merge sort divides a collection in half and then merges the sorted halves. 
 # The fact that the algorithm repeatedly halves something is your clue that it includes a logarithm in its time complexity. 
 # One last place you're likely to see logarithms come up is with a perfect binary tree. One property of these binary trees is that the number of nodes doubles at each level.
