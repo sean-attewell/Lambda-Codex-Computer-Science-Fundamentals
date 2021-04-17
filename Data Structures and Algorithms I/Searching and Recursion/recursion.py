@@ -55,7 +55,7 @@ def print_to_zero(n):
 
 print_to_zero(-4)
 
-# == 0 could lead to infinite recursion with negative numbers 
+# An == 0 base case could lead to infinite recursion with negative numbers 
 # the base case wouldn't hit and it would keep taking away 1
 
 

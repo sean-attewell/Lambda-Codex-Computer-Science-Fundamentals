@@ -116,9 +116,12 @@ print('what_is_returned: ', what_is_returned)
 # This decrements k from 6 to zero
 # then adds 0 returned by whole function and 1 (the k before it was last decremented)
 # then adds 1 returned by whole function and 2 (the k before it was last decremented)
-# then adds 2 returned by whole function and 3 (the k before it was last decremented)
-# ...
-# finally adds 15 returned by whole function to 6 (the initial k before first decremented)
+# then adds 3 returned by whole function and 3 (the k before it was last decremented)
+# then adds 6 returned by whole function and 4 (the k before it was last decremented)
+# then adds 10 returned by whole function and 5 (the k before it was last decremented)
+# then adds 15 returned by whole function and 6 (the initial k before first decremented)
+
 # prints and returns the last result
 
-# So it UNWINDS in the reverse direction it wound up.
+# When the function is called within the function, each time imagine going to a new piece of paper below
+# Which will eventually return to the paper above it, until you get back up to the original piece of paper.
