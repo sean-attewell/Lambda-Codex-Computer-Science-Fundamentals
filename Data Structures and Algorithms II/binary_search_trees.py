@@ -73,7 +73,7 @@ class BinaryTreeNode:
 # Weaknesses
 # The primary weakness of a BST is that they only have efficient operations if they are balanced. 
 # The more unbalanced they are, the worse the efficiency of their operations gets. 
-# Another weakness is that they are don't have stellar efficiency in any one operation. 
+# Another weakness is that they don't have stellar efficiency in any one operation. 
 # They have good efficiency for a lot of different operations. So, they are more of a general-purpose data structure.
 
 # If you want to learn more about trees that automatically rearrange their nodes to remain balanced, look into AVL trees or Red-Black trees
