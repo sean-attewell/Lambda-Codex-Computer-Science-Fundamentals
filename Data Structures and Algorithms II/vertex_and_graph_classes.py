@@ -36,7 +36,7 @@ class Graph:
         return vert in self.vertices
 
     def __iter__(self):
-        return iter(self.vertices.values())
+        return iter(self.vertices.values()) # returns a list of all the values available in a given dictionary
 
     def add_vertex(self, value):
         self.count += 1
