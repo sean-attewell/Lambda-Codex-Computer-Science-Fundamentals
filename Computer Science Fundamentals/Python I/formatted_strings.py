@@ -6,7 +6,7 @@ year = 2020
 print("Hey %s! It's the year %d." % (name, year))
 # Hey Austen! It's the year 2020.
 
-# Any object that is not a string can also be formatted using the s% operator. The string which returns from the object's repr method will be used in the formatted string.
+# Any object that is not a string can also be formatted using the %s operator. The string which returns from the object's repr method will be used in the formatted string.
 
 my_list = [1, 2, 3]
 print("my_list: %s" % my_list)
