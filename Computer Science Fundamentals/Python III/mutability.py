@@ -37,8 +37,8 @@ b = a
 print(a is b)  # True
 
 # In the code above, we first assign 1 to the variable a. Then, we assign 2 to the variable b. These are two different objects in memory and thus have different identities.
-# We verify that they are different by using the is operator, which returns False. T
-# he line b = a assigns the variable b the object that the variable a is pointed to. Now, both a and b are referencing the same object in memory.
+# We verify that they are different by using the is operator, which returns False. 
+# The line b = a assigns the variable b the object that the variable a is pointed to. Now, both a and b are referencing the same object in memory.
 
 # We can use the id() function to verify that this is the case as well:
 
@@ -185,7 +185,8 @@ print(id(my_tuple[1]))  # 19380184
 # However, we can assign new objects to the list that is at position 1 of our tuple? Why is that? Well, what do we know about lists in Python? Lists are mutable objects.
 # So, we can modify a list without creating a new object.
 # So, when we are modifying the list directly (instead of assigning a new object), it doesn't affect our tuple's immutability.
-# Notice that the identity of the list at my_tuple[1] doesn't change after replacing its three elements with 4, 5, and 6.
+# Notice that the identity of the list at my_tuple[1] doesn't change after replacing its three elements with 4, 5, and 6 
+# This is because it's mutable and doesn't need to make a new object in a new location - mutable objects are set up for change.
 
 
 # Passing Objects to Functions
@@ -213,6 +214,8 @@ print(my_list)  # [1, 2, 3, 4]
 # Next, let's see how Python behaves when we pass an immutable object as an argument to a function:
 
 my_string = "I am an immutable object."
+print('my_string:', my_string)
+print('my_string identity:', id(my_str))
 
 
 def concatenate_string_to_string(orig_string, string_to_add):
@@ -223,9 +226,11 @@ returned_from_funct = concatenate_string_to_string(my_string, " I hope!")
 
 print("returned_from_funct: ", returned_from_funct)
 # 'I am an immutable object. I hope!'
+print('returned_from_funct identity:', id(returned_from_funct))
 
 print('my_string: ', my_string)
 # 'I am an immutable object.'
+print('my_string identity:', id(my_str))
 
 # Notice when an immutable object is passed into a function, the object is copied and bound to the ***parameter name***.
 # In the example above, when my_string is passed into concatenate_string_to_string, my_string is copied to a new object bound to the name orig_string.
