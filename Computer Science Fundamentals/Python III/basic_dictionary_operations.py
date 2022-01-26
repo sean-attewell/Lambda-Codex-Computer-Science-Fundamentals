@@ -1,5 +1,13 @@
 # A dictionary is like a list, but instead of accessing values with an index, you access values with a "key."
-# Unlike lists, dictionaries do not have an order.
+# As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered
+
+# List is a collection which is ordered and changeable. Allows duplicate members.
+# Tuple is a collection which is ordered and unchangeable. Allows duplicate members.
+# Set is a collection which is unordered, unchangeable*, and unindexed. No duplicate members.
+# Dictionary is a collection which is ordered** and changeable. No duplicate members.
+
+# *Set items are unchangeable, but you can remove and/or add items whenever you like.
+# **As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
 
 # Almost any type of value can be used as a dictionary key in Python. You can even use built-in objects like types and functions. However, there are a couple restrictions that dictionary keys must abide by.
 
