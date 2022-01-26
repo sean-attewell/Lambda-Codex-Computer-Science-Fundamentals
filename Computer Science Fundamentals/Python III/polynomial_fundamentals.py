@@ -2,8 +2,10 @@
 # O(n^c)	As the input size increases, the runtime will grow at a faster rate. Polynomial (i.e. the variable that's growing is the base with an exponent rather than the exponent itself)
 
 # Polynomial = many terms. e.g. 10x^7 - 9x^2 + 15x^3 + 9 or ... even just 6...
+# Polynomials are defined such that they will have nonnegative integer exponents.
 # 10x^-2 -9x^2 + 15x^3 +9 is not... you have to have non negative powers of your variables in each of your terms.
-# 9a^1/2 -5 is a polynomial not because it has a non-integer power. Exponent can't be a variable either.
+# 9a^1/2 -5 is not a polynomial not because it has a non-integer power. 
+# Exponent can't be a variable either.
 # A polynomial is a sum of a finite number of terms, where each term has a coefficient (any real number, positive or negative)
 # multiplied by a variable, being raised to a non-negative integer power.
 # In 10x^7 - 9x^2 + 15x^3 + 9
