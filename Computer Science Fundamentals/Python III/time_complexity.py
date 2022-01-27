@@ -20,13 +20,40 @@
 
 # We don't care about speed when the input size is small. The differences in speed are likely to be minimal when the input size is small. When the input size gets enormous, we can see the differences in efficiency between algorithms.
 
-# O(1) number of operations is unaffected by input size, it is constant.
-# O(log n)	As the input size increases, the runtime will grow slightly slower. Increases at first but then it stabilizes and changes less. logarithmic growth. The variable that's growing has an output that grows much slower than it (think 'log wants to be the exponent', or counting zeros in base 10 powers of 10 example)
-# O(n) means the number of operations grows at the same rate as the input size. Linear growth.
-# O(n log n) Quasilinear Time (log-linear complexity – also called “linearithmic”)
-# O(n^c)	As the input size increases, the runtime will grow at a faster rate. Polynomial (i.e. the variable that's growing is the number with an exponent rather than the exponent itself)
-# O(c^n) As the input size increases, the runtime will grow at a much faster rate. Expontential. (the variable is the exponent, the exponent is what grows)
-# O(n!) As the input size increases, the runtime will grow astronomically, even with relatively small inputs. Factorial growth.
+# O(1) - Constant time. number of operations is unaffected by input size, it is constant.
+
+# O(log n) - Logarithmic Time.	As the input size increases, the runtime will grow slightly slower. Increases at first but then it stabilizes and changes less. logarithmic growth. The variable that's growing has an output that grows much slower than it (think 'log wants to be the exponent', or counting zeros in base 10 powers of 10 example). 
+# An algorithm is said to have a logarithmic time complexity when it reduces the size of the input data in each step
+# (it don’t need to look at all values of the input data)
+# Algorithms with logarithmic time complexity are commonly found in operations on binary trees or when using binary search
+
+# O(n) - Linear Time. means the number of operations grows at the same rate as the input size. Linear growth.
+
+# O(n log n) - Quasilinear Time. (log-linear complexity – also called “linearithmic”)
+# An algorithm is said to have a quasilinear time complexity when each operation in the input data have a logarithm time complexity.
+# It is commonly seen in sorting algorithms (e.g. mergesort, timsort, heapsort).
+# For example: for each value in the data1 (O(n)) use the binary search (O(log n)) to search the same value in data2.
+# for value in data1:
+    # result.append(binary_search(data2, value))
+
+# O(n^c) - Polynomial.	As the input size increases, the runtime will grow at a faster rate. Polynomial (i.e. the variable that's growing is the number with an exponent rather than the exponent itself)
+
+# O(n²) Quadratic Time
+# An algorithm is said to have a quadratic time complexity when it needs to perform a linear time operation for each value in the input data, for example:
+# In this case, for each item in the data, print every item in the data.
+# for x in data:
+#     for y in data:
+#         print(x, y)
+# Bubble sort is a great example of quadratic time complexity since for each value it needs to compare to all other values in the list
+
+# O(c^n) - Exponential Time. As the input size increases, the runtime will grow at a much faster rate. Expontential. (the variable is the exponent, the exponent is what grows)
+# An algorithm is said to have an exponential time complexity when the growth doubles with each addition to the input data set. 
+# This kind of time complexity is usually seen in brute-force algorithms
+# An example of an exponential time algorithm is the recursive calculation of Fibonacci numbers
+
+# O(n!) - Factorial time. As the input size increases, the runtime will grow astronomically, even with relatively small inputs. Factorial growth.
+# A great example of an algorithm which has a factorial time complexity is the Heap’s algorithm, which is used for generating all possible permutations of n objects.
+# Another great example is the Travelling Salesman Problem
 
 # Again, n (x axis) represents the size of the data, and on the chart above, N (y axis) represents the number of operations
 # Big O notation describes how fast the runtime grows (relative to the input size)
@@ -356,6 +383,8 @@ def bubble_sort(data):
                 data[i], data[i+1] = data[i+1], data[i]
                 swapped = True
 
+# If any swap took place in a run through the array, then swapped will be set to true
+# This causes the while loop to keep going, and it does another run through the array from the start
 
 if __name__ == '__main__':
     data = [9, 1, 7, 6, 2, 8, 5, 3, 4, 0]
@@ -379,7 +408,8 @@ def fibonacci(n):
     return fibonacci(n-1) + fibonacci(n-2)
 
 
-print(fibonacci(4))
+print('fibonacci of 4:', fibonacci(4))
+# https://stackoverflow.com/questions/360748/computational-complexity-of-fibonacci-sequence/360773#360773
 
 
 # Factorial — O(n!)
@@ -390,8 +420,8 @@ print(fibonacci(4))
 # 4! = 4 x 3 x 2 x 1 = 24
 # 5! = 5 x 4 x 3 x 2 x 1 = 120
 # 6! = 6 x 5 x 4 x 3 x 2 x 1 = 720
-# 7! = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5.040
-# 8! = 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1 = 40.320
+# 7! = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5040
+# 8! = 8 x 7 x 6 x 5 x 4 x 3 x 2 x 1 = 40320
 
 # As you may see it grows very fast, even for a small size input.
 
