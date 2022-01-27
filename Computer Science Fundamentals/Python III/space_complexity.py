@@ -7,12 +7,12 @@ def print_something_a_certain_number_of_times(thing_to_print, number_of_times):
     for _ in range(number_of_times):
         print(thing_to_print)
 
+print_something_a_certain_number_of_times("Get it", 7)
+
 # The function above has a constant (O(1)) space complexity because no matter how large n gets, the amount of memory being used stays the same.
 
-# print_something_a_certain_number_of_times("Get it", 5)
 
 # This function takes O(n) space:
-
 
 def append_to_list_a_certain_number_of_times(number_of_times):
     # create an empty list
@@ -28,7 +28,6 @@ def append_to_list_a_certain_number_of_times(number_of_times):
 # We are often referring to additional space when we talk about space complexity–meaning that we do not include the memory used by the inputs.
 # This function takes constant space (O(1)) even though the input has n items:
 
-
 def get_the_max(items_list):
     # sets the maximum to negative infinity, so anything else will become the max
     maximum = float("-inf")
@@ -37,6 +36,7 @@ def get_the_max(items_list):
             maximum = item
 
     return maximum
+
 
 # https://www.baeldung.com/cs/space-complexity
 
@@ -72,6 +72,7 @@ def get_the_max(items_list):
 # A great example of optimizing the time complexity of the algorithm at the expense of memory is memoization. It’s a technique used to reduce time complexity of algorithms that frequently call some method with the same input data. Instead of calling the method every time, which might be time-consuming, we store the results, and on each call, we check if there is already a cached result for a given input.
 
 # In computing, memoization or memoisation is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again
+
 
 # The algorithm’s speed cannot cause a program’s failure. The speed will rely on the computing power of the machine on which it’s executed. In a worst-case scenario, low computing power will force the algorithm to slow down.
 
