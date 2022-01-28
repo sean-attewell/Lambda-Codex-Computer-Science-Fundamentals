@@ -25,19 +25,26 @@
 # 7	0111
 # 8	1000
 # ...
-# 15 1111 (half a byte has 16 possibilities. In hex you can represent 16 possibilities in one character from 0 to f)
+# 15 1111 (half a byte (a nibble) has 16 possibilities. In hex you can represent 16 possibilities in one character from 0 to f)
 
 # https://www.mathsisfun.com/binary-number-system.html
 
 # The "10" means 2 in decimal,
 # The ".1" means half,
-# So "10.1" in binary is 2.5 in decimal
+# So "10.1" in binary is 2 + 1/2 or 2.5 in decimal
 
-# As we move further left, every number place gets 2 times bigger.
-# As we move further right, every number place gets 2 times smaller (half as big).
+# I guess you don't call it a decimal place if you're working in binary
+# You can refer to this symbol as a radix point no matter what the base is.
+# In computer science and mathematics, the word radix can mean the same thing as base or root.
+# In binary, the point can also be referred to as a binary point
+
+# As we move further left, every number place gets 2 times bigger (multiplied by 2 - increasing the power once more means multiplied by another 2).
+# As we move further right, every number place gets 2 times smaller (divided by 2).
 
 # So to the right of the decimal you're doing 1/2, 1/4, 1/8 etc.
 
+# This is the same in base 10 which gets 10x bigger (increasing the power means multiplied by another 10) to the left of the decimal or divided by 10 to the right of the decimal.
+# in base 10, 10.1 means 10 + 1/10
 
 # We now know that things are stored in RAM using binary, and each "box" in RAM holds 1 byte (8 bits). What does that mean for what we can store in RAM? Let's say we have 1 byte of RAM to use. How many different numbers can we represent using only this 1 byte?
 
@@ -45,12 +52,22 @@
 
 # NOTE this is not the same as storing the actual number 256, which would require 9 bits. It means that with 8 bits (a byte) you can store the numbers from 0-255. 256 different numbers.
 
+# Unsigned integers are represented as a sequence of N bits, thus being able to represent numbers between 0 and 2^N-1. 
+# An unsigned 8-bit integer can store any value between 0 and 255, an unsigned 16-bit integer can store any value between 0 and 65535
+
+# Remember that because the first bit represents 2^0, which is 1, the 8th bit represents 2^7, which is 128
+# Maybe remember this as being like zero based indexing. The first position represents 2^0.
+
 # 128 = 10000000
 # 255 = 11111111
 # 256 = 100000000
 
+# Filling up all digits to the right of a bit with be 1 less than that bit represents.
+
 # Every time we add a new bit, we double the number of possible numbers we can express in binary. 
 # This pattern can be generalized as 2^n and 2^8 = 256.
+
+# This is the same as every new digit of base 10 we multiply the number of possible numbers we can store by 10.
 
 # NOTE Don't get confused between the headings of which number each place represents starts at 2^0 (first place represents 1, next place is 2^1 which represents 2)
 # and the way you calculate how many possible numbers you can store which starts with 2^1 (two possible numbers with one bit)
@@ -148,6 +165,7 @@
 # A -> 01000001
 
 # Each character, once it was encoded, could be stored as one 8-bit slot in memory.
+# Note that ASCII is a 7-bit character set containing 128 characters, hence why the 8th bit is always set to 0.
 
 # https://www.w3schools.com/charsets/ref_html_ascii.asp
 
@@ -175,7 +193,8 @@
 # A nibble has sixteen possible values (2^4). 
 # A nibble can be represented by a single hexadecimal digit and called a hex digit.
 
-# A full byte (octet) is represented by two hexadecimal digits; therefore, it is common to display a byte of information as two nibbles. Sometimes the set of all 256 byte values is represented as a 16×16 table, which gives easily readable hexadecimal codes for each value.
+# A full byte (octet) is represented by two hexadecimal digits; therefore, it is common to display a byte of information as two nibbles.
+# Sometimes the set of all 256 byte values is represented as a 16×16 table, which gives easily readable hexadecimal codes for each value.
 
 
 # https://vladris.com/blog/2018/10/13/arithmetic-overflow-and-underflow.html
@@ -186,7 +205,7 @@
 # similarly decrementing 0 is -1, which cannot be represented by an uint16_t and becomes 65535
 
 # Python provides support for arbitrarily large integers: unlike C++, where the bit width (number of bits used to represent a number) is fixed, we can have integers of any size:
-# print(10**100)
+print(10**100)
 
 # Why don’t all languages provide such support? The answer is performance. The underlying hardware the code runs on uses fixed-width integers, so performing arithmetic on fixed-width integer types becomes a single CPU instruction. 
 
