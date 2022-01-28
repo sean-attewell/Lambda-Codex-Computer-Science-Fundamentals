@@ -24,7 +24,7 @@
 
 # O(log n) - Logarithmic Time.	As the input size increases, the runtime will grow slightly slower. Increases at first but then it stabilizes and changes less. logarithmic growth. The variable that's growing has an output that grows much slower than it (think 'log wants to be the exponent', or counting zeros in base 10 powers of 10 example). 
 # An algorithm is said to have a logarithmic time complexity when it reduces the size of the input data in each step
-# (it don’t need to look at all values of the input data)
+# (it doesn’t need to look at all values of the input data)
 # Algorithms with logarithmic time complexity are commonly found in operations on binary trees or when using binary search
 
 # O(n) - Linear Time. means the number of operations grows at the same rate as the input size. Linear growth.
@@ -255,7 +255,7 @@ def foo(n):
 # In computer science, Big-O notation is used to classify algorithms according to how their running time or space requirements grow as the input size (n) grows. This notation characterizes functions according to their growth rates: different functions with the same growth rate may be represented using the same O notation.
 
 # An algorithm is said to have a logarithmic time complexity when it reduces the size of the input data in each step
-# (it don’t need to look at all values of the input data), for example:
+# (it doesn’t need to look at all values of the input data), for example:
 
 data = [1, 2, 9, 8, 3, 4, 7, 6, 5]
 
