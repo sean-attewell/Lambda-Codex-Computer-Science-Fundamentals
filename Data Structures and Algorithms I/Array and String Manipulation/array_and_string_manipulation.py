@@ -1,4 +1,4 @@
-# A data structure is a structure that is designed for holding information in a particular way. A static array is a data structure that is designing for storing information sequentially (in order). For example, if you were to store the English alphabet in a static array, you would expect the "B" character to right next to both the "A" character and the "C" character. Additionally, every position within the static array is labeled with an index. So, if you wanted to access the first item in the static array, you would expect that item to have an index of 0. The second item would have an index of 1. The third item would have an index of 2. This pattern continues for the entire capacity of the static array.
+# A data structure is a structure that is designed for holding information in a particular way. A static array is a data structure that is designed for storing information sequentially (in order). For example, if you were to store the English alphabet in a static array, you would expect the "B" character to right next to both the "A" character and the "C" character. Additionally, every position within the static array is labeled with an index. So, if you wanted to access the first item in the static array, you would expect that item to have an index of 0. The second item would have an index of 1. The third item would have an index of 2. This pattern continues for the entire capacity of the static array.
 
 # Python does not have a static array data type. However, lists are built on dynamic arrays. As you will see, dynamic arrays rely on an underlying static array to work.
 
@@ -122,8 +122,25 @@ print(a[sliceObj]) # [2, 3]
 # Pass By Reference or Value
 # In Python, some function arguments are passed in by their actual value, and some are passed in as a reference to the object in memory. Primitive values like integers, floats, and strings are passed in by their actual value. So, if you call a function and pass in the integer 2 when you reference that value by the named parameter of the function, you can't change 2 in memory. However, non-primitive objects like lists or dictionaries are passed in as references to that object in memory. So, if you call a function and pass in the dictionary {"name": "Matt"} when you reference that dictionary using the named parameter, you are changing the original object that was passed in. For objects that are passed in by reference, they must be copied to a new variable before they are modified if you want to avoid side effects.
 
+# IMMUTABLE OBJECTS:
+# Anytime you try to update the value of an immutable object, a new object is created instead.
+# Numbers (int, float, complex)
+# Strings
+# Bytes
+# Booleans
+# Tuples
+
+# MUTABLE OBJECTS:
+# list
+# set
+# dict
+# byte array
+# instances of user-defined classes
+
+
 # When should I use an in-place function or algorithm?
 # It would be best if you always defaulted to using an out-of-place function. This is a safer default to avoid unintended side-effects in your program. However, there are scenarios that you might encounter where you need to be extremely space-efficient. In that case, you might have to use an in-place function to work within the particular space-constraints you've been given.
+
 
 def append_exclamations(str_list):
     for idx, _ in enumerate(str_list):
