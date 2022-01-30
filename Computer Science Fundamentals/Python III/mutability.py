@@ -215,8 +215,9 @@ print(my_list)  # [1, 2, 3, 4]
 
 my_string = "I am an immutable object."
 print('my_string:', my_string)
+# my_string: I am an immutable object.
 print('my_string identity:', id(my_str))
-
+# my_string identity: 2237295803632
 
 def concatenate_string_to_string(orig_string, string_to_add):
     return orig_string + string_to_add
@@ -225,12 +226,14 @@ def concatenate_string_to_string(orig_string, string_to_add):
 returned_from_funct = concatenate_string_to_string(my_string, " I hope!")
 
 print("returned_from_funct: ", returned_from_funct)
-# 'I am an immutable object. I hope!'
+# returned_from_funct:  I am an immutable object. I hope!
 print('returned_from_funct identity:', id(returned_from_funct))
+# returned_from_funct identity: 2237295381744
 
 print('my_string: ', my_string)
-# 'I am an immutable object.'
+# my_string:  I am an immutable object.
 print('my_string identity:', id(my_str))
+# my_string identity: 2237295803632
 
 # Notice when an immutable object is passed into a function, the object is copied and bound to the ***parameter name***.
 # In the example above, when my_string is passed into concatenate_string_to_string, my_string is copied to a new object bound to the name orig_string.
