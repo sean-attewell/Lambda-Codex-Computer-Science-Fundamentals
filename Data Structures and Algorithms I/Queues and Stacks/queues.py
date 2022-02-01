@@ -21,7 +21,7 @@
 # There are no weaknesses in this data structure. The reason is that it is a very targeted data structure designed to do a few things well.
 
 # When are queues useful?
-# Queues are useful data structures in any situation where you want to make sure things are processes in a FIFO order. 
+# Queues are useful data structures in any situation where you want to make sure things are processed in a FIFO order. 
 # Think of a web server. The server might be trying to service thousands of page requests per minute. 
 # It would make the most sense for the server to process and respond to the requests in the same order that they were received. 
 # That way, the first client to request a page is the first client to receive a response. 
