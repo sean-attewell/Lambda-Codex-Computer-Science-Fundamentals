@@ -108,6 +108,9 @@ print(my_dict)
 # we removed the element 1 from my_list_orig. Notice, just like when we added to the list, my_list_alias is also affected.
 # This behavior is something you need to be aware of if you ever use aliasing with mutable objects in your code.
 
+# NOTE: Sets and dictionaries don't allow duplicate members because they would hash to the same value.
+# Duplicate value are ignored in sets, and for dictionaries duplicate values would hash to the same index.
+
 # Immutable Objects
 # An immutable object is an object whose value cannot be changed after it is created. Immutable means not changeable.
 # Anytime you try to update the value of an immutable object, a new object is created instead.
