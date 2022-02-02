@@ -86,6 +86,7 @@ class HashTable:
         current_entry = self.storage[index] # get first entry at index (the head)
 
         # Work through the chain
+        # Remember it's the index that's the same, not the key
         while current_entry is not None and current_entry.key != key:
               current_entry = current_entry.next
 
@@ -93,7 +94,7 @@ class HashTable:
         if current_entry is not None:
             current_entry.value = value
 
-        # Readed end of linked list, create new entry    
+        # Reached end of linked list, pre-pend new entry to head    
         else:
             new_entry = HashTableEntry(key, value)
             new_entry.next = self.storage[index] # point at old head

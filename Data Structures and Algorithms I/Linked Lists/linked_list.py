@@ -118,7 +118,7 @@ class LinkedList:
     def __init__(self, head=None):  
         self.head = head
 
-    def append(self, data):
+    def append(self, data): # Appending to tail 
         new_node = LinkedListNode(data)
 
         if self.head:
@@ -130,6 +130,12 @@ class LinkedList:
             current.next = new_node # When you get to the end, link it to the new node
         else:
              self.head = new_node # If there is no head, new node becomes the head
+
+# Note that this appends to the tail rather than pre-pending to the head.
+# Hence it has to traverse through the linked list with linear time
+# That's because this is a singly linked list (SLL)
+# A doubly linked list (DLL) also usually stores a pointer to the last item in the list (called the tail)
+# For a doubly linked list it would therefore me constant time O(1)
 
 a = LinkedListNode(1)
 my_ll = LinkedList(a)
