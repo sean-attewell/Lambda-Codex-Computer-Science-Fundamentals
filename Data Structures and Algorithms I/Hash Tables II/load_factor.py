@@ -18,10 +18,12 @@
 # Therefore, you need to monitor the load factor and resize your hash table when the load factor gets too large. 
 # The general rule of thumb is to resize your hash table when your load factor is greater than 0.7. 
 # Also, when you resize, it is common to double the size of the hash table. 
+# NOTE: This is similar to how a dynamic array will double in size
 # When you resize the array, you need to re-insert all of the items into this new hash table. 
 # You cannot simply copy the old items into the new hash table.
 # Each item has to be rerun through the hashing function because the hashing function considers the size of the hash table when determining the index that it returns.
-# e.g. the hash_index method uses the capacity: return self.djb2(key) % self.capacity
+# e.g. the hash_index method uses the capacity
+# return self.djb2(key) % self.capacity
 
 # You can see that resizing is an expensive operation, so you don’t want to resize too often. 
 # However, when we average it out, hash tables are constant time (O(1)) even with resizing.
@@ -82,16 +84,20 @@ class HashTable:
         rehashes all key/value pairs.
         Implement this.
         """
+        # If the load factor is over 0.7 after a put
+        # the put method calls self.resize(self.capacity * 2)
+        # This doubles the capacity 
+
         old_storage = self.storage
         self.capacity = new_capacity
         self.storage = [None] * self.capacity
-
-        current_entry = None
 
         # Save this because put adds to it, and we don't want that.
         # It might be less hackish to pass a flag to put indicating that
         # we're in a resize and don't want to modify item count.
         old_item_count = self.item_count
+
+        current_entry = None
 
         for bucket_item in old_storage:
             current_entry = bucket_item

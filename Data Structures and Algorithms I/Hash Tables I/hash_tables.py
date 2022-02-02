@@ -1,4 +1,6 @@
 # Hash tables are also called hash maps, maps, unordered maps, or dictionaries. 
+# As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered
+# Python also uses hash tables for sets
 # A hash table is a structure that maps keys to values. This makes them extremely efficient for lookups because if you have the key, retrieving the associated value is a constant-time operation.
 
 
@@ -157,6 +159,8 @@ if (u1 == u2):
 else:
     print('different users')
 
+# different users
+
 # The hash() function returns the hash value of the object. The default implementation is derived from the Id of the object.
 # Even though the user details are the same, the comparison yields differet objects. 
 # In order to change it, we need to implement the __eq__() method.
@@ -286,7 +290,7 @@ class HashTable:
     def __init__(self, capacity):
         self.capacity = capacity  # Number of buckets in the hash table
         self.storage = [None] * capacity
-        self.item_count = 0
+        self.item_count = 0 # used to calculate the load factor later (number of items in hash table / total number of slots)
 
     def get_num_slots(self):
         """
@@ -300,6 +304,9 @@ class HashTable:
         """
         DJB2 hash, 32-bit
         """
+        # If you just want to have a good hash function, and cannot wait, djb2 is one of the best string hash functions i know. ... 
+        # it has excellent distribution and speed on many different sets of keys and table sizes
+
         # Cast the key to a string and get bytes
         str_key = str(key).encode()
 
@@ -336,6 +343,9 @@ class HashTable:
         self.storage[index] = value
         return
 
+        # Remeber the hash of the key gives you the index for where to store the value associated with the key
+        # As with using a dictionary, the user provides both the key and the value
+
 
     def delete(self, key):
         """
@@ -352,3 +362,14 @@ class HashTable:
         """
         index = self.hash_index(key)
         return self.storage[index]
+
+
+
+my_hashtable = HashTable(10)
+print(my_hashtable.get.__doc__)
+
+        # Retrieve the value stored with the given key.
+        # Returns None if the key is not found.
+
+# The __str__ method in Python represents the class objects as a string – it can be used for 
+# classes. The __str__ method should be defined in a way that is easy to read and outputs all the members of the class. 
