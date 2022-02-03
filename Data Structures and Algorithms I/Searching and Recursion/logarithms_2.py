@@ -63,11 +63,21 @@
 
 # (think about how 8^1 is 1 x 8)
 
+# "How long did I spend shrinking at this growth rate of 8 to end up at 0.125?" is another way of saying "what is the exponent?"
+# 1 divided by 8 one time (-1)
+
+# Same thing as "How long did I spend growing at a growth rate of 8 to end up at 1?"
+# log_2 1 = 0
+# The answer is 0 time. 1 x 2^0 = 1
+
 # Example: What is log5(0.008) ... ?
 # 1 ÷ 5 ÷ 5 ÷ 5 = 5^−3,
 # So log5(0.008) = −3
 
 # (think about how 5^3 is 1 x 5 x 5 x 5)
+
+# the place you end up from either multiplying or dividing by the growth rate must be bigger than zero
+# It may approach zero if you're dividing, but it won't get there
 
 
 # The same way logarithms can be a zero counting function for powers of 10, negative powers of 10 ould the leading zeros (including one before the decimal place)
