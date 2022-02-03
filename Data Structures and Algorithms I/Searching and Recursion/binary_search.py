@@ -1,5 +1,5 @@
 # For finding and item in an unsorted array you may be stuck with linear search, which takes linear time O(n)
-# If the array is sorted, you can use binary search (halving the number of possibilities with each guess), which takes linear time O(log n)
+# If the array is sorted, you can use binary search (halving the number of possibilities with each guess), which takes O(log n)
 # This is much more efficient
 
 def binary_search(array, target):
