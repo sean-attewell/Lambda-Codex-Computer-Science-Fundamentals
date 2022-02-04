@@ -33,6 +33,8 @@
 
 # So "How long did I spend growing at this growth rate?" is another way of saying "what is the exponent?"
 
+# log_2 1 = 0
+# The answer is 0 time spent growing at a growth rate of two. 1 x 2^0 = 1
 
 # Why should I care? What does this have to do with programming and interview preparation?
 # In computer science, you often ask questions like "How many times must n be divided in half before we get to one?" 
@@ -66,9 +68,7 @@
 # "How long did I spend shrinking at this growth rate of 8 to end up at 0.125?" is another way of saying "what is the exponent?"
 # 1 divided by 8 one time (-1)
 
-# Same thing as "How long did I spend growing at a growth rate of 8 to end up at 1?"
-# log_2 1 = 0
-# The answer is 0 time. 1 x 2^0 = 1
+# Perhaps a better way to say it is that if where you end up is below 1, then it's a shrinking rate rather than a growth rate.
 
 # Example: What is log5(0.008) ... ?
 # 1 ÷ 5 ÷ 5 ÷ 5 = 5^−3,
@@ -78,6 +78,7 @@
 
 # the place you end up from either multiplying or dividing by the growth rate must be bigger than zero
 # It may approach zero if you're dividing, but it won't get there
+
 
 
 # The same way logarithms can be a zero counting function for powers of 10, negative powers of 10 ould the leading zeros (including one before the decimal place)
