@@ -29,8 +29,7 @@ add_four(6)
 # the innermost add_two call gets pushed onto the stack, and 6 gets stored as num
 # the innermost add_two call returns 8 and pops off
 # the second add_two call gets pushed onto the stack with 8 as num
-# the second add_two call
-# returns 10 and gets popped off
+# the second add_two call returns 10 and gets popped off
 # we are back in the context of add_four, which now returns 10 and pops off the stack
 # the stack is now empty
 
@@ -54,11 +53,15 @@ add_four(6)
 # x_{10} = 34 + 21
 # x_{10} = 55
 
+# Calculate the nth term (zero based counting)
 def recursive_fib(n):
     if n <= 1:
         return n
     else:
         return recursive_fib(n-1) + recursive_fib(n-2)
+
+print(recursive_fib(10))
+# 55
 
 # The base cases are the first two terms in the sequence; the 0th term is 0, and the 1st term is 1. 
 # For every other term, we find the value by summing the previous two terms.
@@ -73,7 +76,17 @@ def recursive_fib2(n):
         n_minus_2 = recursive_fib2(n-2)
         return n_minus_1 + n_minus_2
 
+print(recursive_fib2(6))
+
 # Visualise on Python tutor to understand the call stack
+# Note that it shows the stack upside down
+# But does show the execution context for each function call (any variables in that function scope are stored here).
+
+# Each call to recursive_fib2 has to recursively call itself until it gets the answer for n_minus_1 in it's execution context
+# Then has to recursively call itself to get the answer for n_minus_2 in its execution context
+# Then it adds them up
+# Which either is the final answer
+# Or returned to the call below it on the stack as the answer for n_minus_1 or n_minus_2
 
 # https://medium.com/popfizzcs/tracing-recursion-6e787c0adc74
 
