@@ -1,9 +1,31 @@
+
+
+def print_to_zero(n):
+    if n < 0: # base case
+        return
+    print(n)
+    return print_to_zero(n - 1) # recursive case
+
+print_to_zero(5)
+# 5
+# 4
+# 3
+# 2
+# 1
+# 0
+
+# The base case causes it to return only when n is smaller than 0, so 0 still prints before that
+# It also returns straight away if you try and print something smaller than 0
+
+# An == 0 base case could lead to infinite recursion with negative numbers 
+# the base case wouldn't hit and it would keep taking away 1
+
+
 # Recursion is a method to solve problems. 
 # It means breaking down a problem into smaller and smaller sub-problems until the sub-problem is easy to solve. 
 # Recursive functions call themselves. 
 # Often, recursive solutions are terse and elegant. 
 # Recursive solutions are not always the most efficient
-
 
 def sum_list(items):
     sum = 0
@@ -38,25 +60,20 @@ def sum_list_recursively(items):
     if len(items) == 1: # Base case
         return items[0]
     else:
-        return items[0] + sum_list(items[1:]) # items[1:] has one less item
+        return items[0] + sum_list_recursively(items[1:]) # items[1:] has one less item
 
-print(sum_list_recursively(my_list))
+print(sum_list_recursively(my_list)) 
+# 21
 
 # You can see how the recursive calls go "out" before returning and starting working their way "back" to the original call.
 
-# When the function is called within the function, each time imagine going to a new piece of paper below
-# Which will eventually return to the paper above it, until you get back up to the original piece of paper.
+# When the function is called within the function, each time imagine going to a new piece of paper on top (top of the call stack)
+# Which will eventually return to the paper below it, until you get back down to the original piece of paper.
 
-def print_to_zero(n):
-    if n < 0: # base case
-        return
-    print(n)
-    return print_to_zero(n - 1) # recursive case
-
-print_to_zero(-4)
-
-# An == 0 base case could lead to infinite recursion with negative numbers 
-# the base case wouldn't hit and it would keep taking away 1
+# You can see by visualising on https://pythontutor.com/ that it adds calls until it returns 6 on it's own (the base case)
+# Then in the else clause, items[0] was last 5, so you add 6 to it
+# Then in the else clause, items[0] was 4 before that, so you add the 11 you just returned to that
+# and so on until you return to the original piece of paper at the bottom where items[0] was 1, and you add the 20 you returned
 
 
 # The three rules for a recursive function are:
@@ -68,7 +85,8 @@ print_to_zero(-4)
 
 # What is a base case? It allows the algorithm to stop recursing. 
 # With our sum_list function, what allows the algorithm to stop recursing?
-# It's the first line: if len(items) == 1:. Notice how if this condition is true, it returns a value and doesn't make a recursive call to itself. 
+# It's the first line: if len(items) == 1:
+# Notice how if this condition is true, it returns a value and doesn't make a recursive call to itself. 
 # We are saying to stop recursing if the list to sum has only one item.
 
 # The second rule is that the algorithm must change its state to move towards the base case.
@@ -89,10 +107,10 @@ print_to_zero(-4)
 # Is there a straightforward way that the state of the data changes with each iteration that brings it closer to the base case (Rule 2)?
 
 
-# Let's look at another typical example of learning recursion–computing factorials.
+# Let's look at another typical example of learning recursion – computing factorials.
 
 # When does computing factorials come in handy? 
-# They are required when figuring combinations; how many ways can we arrange these many items? 
+# They are required when figuring combinations; how many ways can we arrange this many items? 
 # Or how many orders can there be with this list? 
 # Also, they are useful for determining ways of choosing a certain number of items from a collection. 
 # For example, if you have 100 different menu items, how many possible 5-item orders could you make?
@@ -107,6 +125,7 @@ def recursive_factorial(n):
     else:
         return n * recursive_factorial(n - 1)
 
+print(recursive_factorial(5))
 
 # https://www.interviewcake.com/concept/python3/overlapping-subproblems?course=fc1&section=dynamic-programming-recursion
 
