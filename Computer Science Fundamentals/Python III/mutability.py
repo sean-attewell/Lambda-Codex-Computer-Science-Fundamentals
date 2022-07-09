@@ -240,3 +240,23 @@ print('my_string identity:', id(my_str))
 
 # Notice when an immutable object is passed into a function, the object is copied and bound to the ***parameter name***.
 # In the example above, when my_string is passed into concatenate_string_to_string, my_string is copied to a new object bound to the name orig_string.
+
+
+another_string = "I am an immutable object."
+print("id of another_string:", id(another_string))
+
+def doesitchange(str):
+  print("id of str in function:", id(str))
+  return str
+
+returned_string = doesitchange(another_string)
+
+print("id of returned_string:", id(returned_string))
+
+"""
+id of another_string: 2427096076736
+id of str in function: 2427096076736
+id of returned_string: 2427096076736
+"""
+
+# The original immutable string is never changed so no new object is ever created
